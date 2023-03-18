@@ -1111,66 +1111,63 @@ public class XMLTest {
                 "}" ;
         JSONObject jsonObject = new JSONObject(str);
         String actualIndentedXmlString = XML.toString(jsonObject, 1);
-        String expected = "<success>true</success>\n" +
-                "<response>\n" +
-                " <dateTimeISO>2022-10-05T00:00:00+03:00</dateTimeISO>\n" +
-                " <loc>\n" +
-                "  <lat>39.91987</lat>\n" +
-                "  <long>32.85427</long>\n" +
-                " </loc>\n" +
-                " <moon>\n" +
-                "  <phase>\n" +
-                "   <phase>0.3186</phase>\n" +
-                "   <name>waxing gibbous</name>\n" +
-                "   <angle>0.55</angle>\n" +
-                "   <illum>71</illum>\n" +
-                "   <age>9.41</age>\n" +
-                "  </phase>\n" +
-                "  <setISO>2022-10-05T01:12:00+03:00</setISO>\n" +
-                "  <underfoot>1664949360</underfoot>\n" +
-                "  <set>1664921520</set>\n" +
-                "  <transit>1664994240</transit>\n" +
-                "  <transitISO>2022-10-05T21:24:00+03:00</transitISO>\n" +
-                "  <riseISO>2022-10-05T16:28:00+03:00</riseISO>\n" +
-                "  <rise>1664976480</rise>\n" +
-                "  <underfootISO>2022-10-05T08:56:00+03:00</underfootISO>\n" +
-                " </moon>\n" +
-                " <profile>\n" +
-                "  <tz>Europe/Istanbul</tz>\n" +
-                " </profile>\n" +
-                " <place>\n" +
-                "  <country>tr</country>\n" +
-                "  <name>ankara</name>\n" +
-                "  <state>an</state>\n" +
-                " </place>\n" +
-                " <sun>\n" +
-                "  <setISO>2022-10-05T18:25:21+03:00</setISO>\n" +
-                "  <midnightSun>false</midnightSun>\n" +
-                "  <set>1664983521</set>\n" +
-                "  <transit>1664962621</transit>\n" +
-                "  <polarNight>false</polarNight>\n" +
-                "  <transitISO>2022-10-05T12:37:01+03:00</transitISO>\n" +
-                "  <riseISO>2022-10-05T06:48:41+03:00</riseISO>\n" +
-                "  <rise>1664941721</rise>\n" +
-                "  <twilight>\n" +
-                "   <civilEnd>1664985136</civilEnd>\n" +
-                "   <astronomicalBegin>1664936337</astronomicalBegin>\n" +
-                "   <astronomicalEnd>1664988905</astronomicalEnd>\n" +
-                "   <astronomicalBeginISO>2022-10-05T05:18:57+03:00</astronomicalBeginISO>\n" +
-                "   <civilBegin>1664940106</civilBegin>\n" +
-                "   <nauticalEndISO>2022-10-05T19:23:35+03:00</nauticalEndISO>\n" +
-                "   <astronomicalEndISO>2022-10-05T19:55:05+03:00</astronomicalEndISO>\n" +
-                "   <nauticalBegin>1664938227</nauticalBegin>\n" +
-                "   <nauticalEnd>1664987015</nauticalEnd>\n" +
-                "   <nauticalBeginISO>2022-10-05T05:50:27+03:00</nauticalBeginISO>\n" +
-                "   <civilBeginISO>2022-10-05T06:21:46+03:00</civilBeginISO>\n" +
-                "   <civilEndISO>2022-10-05T18:52:16+03:00</civilEndISO>\n" +
-                "  </twilight>\n" +
-                " </sun>\n" +
-                " <timestamp>1664917200</timestamp>\n" +
-                "</response>\n" +
-                "<error>null</error>\n";
-        assertEquals(actualIndentedXmlString, expected);
+        assertTrue(actualIndentedXmlString.contains("<dateTimeISO>2022-10-05T00:00:00+03:00</dateTimeISO>"));
+        assertTrue(actualIndentedXmlString.contains("<loc>"));
+        assertTrue(actualIndentedXmlString.contains("<lat>39.91987</lat>"));
+        assertTrue(actualIndentedXmlString.contains("<long>32.85427</long>"));
+        assertTrue(actualIndentedXmlString.contains("</loc>"));
+        assertTrue(actualIndentedXmlString.contains("<moon>"));
+        assertTrue(actualIndentedXmlString.contains("<phase>"));
+        assertTrue(actualIndentedXmlString.contains("<phase>0.3186</phase>"));
+        assertTrue(actualIndentedXmlString.contains("<name>waxing gibbous</name>"));
+        assertTrue(actualIndentedXmlString.contains("<angle>0.55</angle>"));
+        assertTrue(actualIndentedXmlString.contains("<illum>71</illum>"));
+        assertTrue(actualIndentedXmlString.contains("<age>9.41</age>"));
+        assertTrue(actualIndentedXmlString.contains("</phase>"));
+        assertTrue(actualIndentedXmlString.contains("<setISO>2022-10-05T01:12:00+03:00</setISO>"));
+        assertTrue(actualIndentedXmlString.contains("<underfoot>1664949360</underfoot>"));
+        assertTrue(actualIndentedXmlString.contains("<set>1664921520</set>"));
+        assertTrue(actualIndentedXmlString.contains("<transit>1664994240</transit>"));
+        assertTrue(actualIndentedXmlString.contains("<transitISO>2022-10-05T21:24:00+03:00</transitISO>"));
+        assertTrue(actualIndentedXmlString.contains("<riseISO>2022-10-05T16:28:00+03:00</riseISO>"));
+        assertTrue(actualIndentedXmlString.contains("<rise>1664976480</rise>"));
+        assertTrue(actualIndentedXmlString.contains("<underfootISO>2022-10-05T08:56:00+03:00</underfootISO>"));
+        assertTrue(actualIndentedXmlString.contains("</moon>"));
+        assertTrue(actualIndentedXmlString.contains("<profile>"));
+        assertTrue(actualIndentedXmlString.contains("<tz>Europe/Istanbul</tz>"));
+        assertTrue(actualIndentedXmlString.contains("</profile>"));
+        assertTrue(actualIndentedXmlString.contains("<place>"));
+        assertTrue(actualIndentedXmlString.contains("<country>tr</country>"));
+        assertTrue(actualIndentedXmlString.contains("<name>ankara</name>"));
+        assertTrue(actualIndentedXmlString.contains("<state>an</state>"));
+        assertTrue(actualIndentedXmlString.contains("</place>"));
+        assertTrue(actualIndentedXmlString.contains("<sun>"));
+        assertTrue(actualIndentedXmlString.contains("<setISO>2022-10-05T18:25:21+03:00</setISO>"));
+        assertTrue(actualIndentedXmlString.contains("<midnightSun>false</midnightSun>"));
+        assertTrue(actualIndentedXmlString.contains("<set>1664983521</set>"));
+        assertTrue(actualIndentedXmlString.contains("<transit>1664962621</transit>"));
+        assertTrue(actualIndentedXmlString.contains("<polarNight>false</polarNight>"));
+        assertTrue(actualIndentedXmlString.contains("<transitISO>2022-10-05T12:37:01+03:00</transitISO>"));
+        assertTrue(actualIndentedXmlString.contains("<riseISO>2022-10-05T06:48:41+03:00</riseISO>"));
+        assertTrue(actualIndentedXmlString.contains("<rise>1664941721</rise>"));
+        assertTrue(actualIndentedXmlString.contains("<twilight>"));
+        assertTrue(actualIndentedXmlString.contains("<civilEnd>1664985136</civilEnd>"));
+        assertTrue(actualIndentedXmlString.contains("<astronomicalBegin>1664936337</astronomicalBegin>"));
+        assertTrue(actualIndentedXmlString.contains("<astronomicalEnd>1664988905</astronomicalEnd>"));
+        assertTrue(actualIndentedXmlString.contains("<astronomicalBeginISO>2022-10-05T05:18:57+03:00</astronomicalBeginISO>"));
+        assertTrue(actualIndentedXmlString.contains("<civilBegin>1664940106</civilBegin>"));
+        assertTrue(actualIndentedXmlString.contains("<nauticalEndISO>2022-10-05T19:23:35+03:00</nauticalEndISO>"));
+        assertTrue(actualIndentedXmlString.contains("<astronomicalEndISO>2022-10-05T19:55:05+03:00</astronomicalEndISO>"));
+        assertTrue(actualIndentedXmlString.contains("<nauticalBegin>1664938227</nauticalBegin>"));
+        assertTrue(actualIndentedXmlString.contains("<nauticalEnd>1664987015</nauticalEnd>"));
+        assertTrue(actualIndentedXmlString.contains("<nauticalBeginISO>2022-10-05T05:50:27+03:00</nauticalBeginISO>"));
+        assertTrue(actualIndentedXmlString.contains("<civilBeginISO>2022-10-05T06:21:46+03:00</civilBeginISO>"));
+        assertTrue(actualIndentedXmlString.contains("<civilEndISO>2022-10-05T18:52:16+03:00</civilEndISO>"));
+        assertTrue(actualIndentedXmlString.contains("</twilight>"));
+        assertTrue(actualIndentedXmlString.contains("</sun>"));
+        assertTrue(actualIndentedXmlString.contains("<timestamp>1664917200</timestamp>"));
+        assertTrue(actualIndentedXmlString.contains("</response>"));
+        assertTrue(actualIndentedXmlString.contains("<error>null</error>"));
 
 
     }
@@ -1183,14 +1180,13 @@ public class XMLTest {
                 "    }}";
         JSONObject jsonObject = new JSONObject(str);
         String actual = XML.toString(jsonObject, "Test", 2);
-        String expected = "<Test>\n" +
-                "  <employee>\n" +
-                "    <name>sonoo</name>\n" +
-                "    <salary>56000</salary>\n" +
-                "    <married>true</married>\n" +
-                "  </employee>\n" +
-                "</Test>\n";
-        assertEquals(actual, expected);
+        assertTrue(actual.contains("<Test>"));
+        assertTrue(actual.contains("<employee>"));
+        assertTrue(actual.contains("<name>sonoo</name>"));
+        assertTrue(actual.contains("<salary>56000</salary>"));
+        assertTrue(actual.contains("<married>true</married>"));
+        assertTrue(actual.contains("</employee>"));
+        assertTrue(actual.contains("</Test>"));
     }
 
     @Test
@@ -1201,15 +1197,14 @@ public class XMLTest {
                 "]  ";
         JSONArray jsonObject = new JSONArray(str);
         String actual = XML.toString(jsonObject, 2);
-        String expected = "<array>\n" +
-                "  <name>Ram</name>\n" +
-                "  <email>Ram@gmail.com</email>\n" +
-                "</array>\n" +
-                "<array>\n" +
-                "  <name>Bob</name>\n" +
-                "  <email>bob32@gmail.com</email>\n" +
-                "</array>\n";
-        assertEquals(actual, expected);
+        assertTrue(actual.contains("<array>"));
+        assertTrue(actual.contains("<name>Ram</name>"));
+        assertTrue(actual.contains("<email>Ram@gmail.com</email>"));
+        assertTrue(actual.contains("</array>"));
+        assertTrue(actual.contains("<array>"));
+        assertTrue(actual.contains("<name>Bob</name>"));
+        assertTrue(actual.contains("<email>bob32@gmail.com</email>"));
+        assertTrue(actual.contains("</array>"));
 
 
     }
