@@ -1290,7 +1290,11 @@ public class JSONObject {
         if (val == null) {
             return defaultValue;
         }
-        return val.doubleValue();
+        final double doubleValue = val.doubleValue();
+        // if (Double.isNaN(doubleValue) || Double.isInfinite(doubleValue)) {
+        // return defaultValue;
+        // }
+        return doubleValue;
     }
 
     /**
